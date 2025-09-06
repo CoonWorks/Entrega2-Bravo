@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       elNodoArray.appendChild(BorrarBoton);
       DOMcarrito.appendChild(elNodoArray);
     });
-    DOMtotal.textContent = calcularTotal();
+    DOMtotal.textContent = calcTotal();
   }
 
   function borrarItemCarrito(evento) {
@@ -113,3 +113,4 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCarrito();
 
 });
+
