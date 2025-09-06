@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       const elNodoArray = document.createElement('li');
       elNodoCarrito.classList.add('list-group-item', 'text-right', 'mx-2');
-      elNodoCarrito.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+      elNodoCarrito.textContent = `${numeroUnidadesItem} x ${NuevoItem[0].nombre} - ${NuevoItem[0].precio}${divisa}`;
       const BorrarBoton = document.createElement('button');
       BorrarBoton.classList.add('btn', 'btn-danger', 'mx-5');
       BorrarBoton.textContent = 'X';
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const NuevoItem = ArrayItems.filter((itemBaseDatos) => {
         return itemBaseDatos.id === parseInt(item);
       });
-      return total + miItem[0].precio;
+      return total + NuevoItem[0].precio;
     }, 0).toFixed(2);
   }
 
@@ -113,4 +113,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCarrito();
 
 });
+
 
