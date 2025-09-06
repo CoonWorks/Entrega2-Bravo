@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const DOMbotonBorrar = document.querySelector('#boton-vaciar');
 
   function renderProductos() {
-    baseDeDatos.forEach((info) => {
+    ArrayItems.forEach((info) => {
       const elNodoCarrito = document.createElement('div');
       elNodoCarrito.classList.add('card', 'col-sm-4');
       const NodoCardBody = document.createElement('div');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     DOMcarrito.textContent = '';
     const carritoSinDuplicados = [...new Set(carrito)];
     carritoSinDuplicados.forEach((item) => {
-      const NuevoItem = baseDeDatos.filter((itemBaseDatos) => {
+      const NuevoItem = ArrayItems.filter((itemBaseDatos) => {
         return itemBaseDatos.id === parseInt(item);
       });
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function calcTotal() {
     return carrito.reduce((total, item) => {
-      const NuevoItem = baseDeDatos.filter((itemBaseDatos) => {
+      const NuevoItem = ArrayItems.filter((itemBaseDatos) => {
         return itemBaseDatos.id === parseInt(item);
       });
       return total + miItem[0].precio;
@@ -111,4 +111,5 @@ document.addEventListener('DOMContentLoaded', () => {
   DOMbotonVaciar.addEventListener('click', vaciarCarrito);
   renderProductos();
   renderCarrito();
+
 });
